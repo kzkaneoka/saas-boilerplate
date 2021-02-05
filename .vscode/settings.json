@@ -1,0 +1,27 @@
+{
+  "window.zoomLevel": 0,
+  "files.autoSave": "afterDelay",
+  "git.enableSmartCommit": true,
+  "git.autofetch": true,
+  "editor.detectIndentation": false,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "typescript.updateImportsOnFileMove.enabled": "never",
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/production-server": true,
+    "**/lambda/src/api": true,
+    "**/.next": true,
+    "**/.coverage": true
+  },
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.workingDirectories": [
+    { "directory": "./saas-boilerplate/app", "changeProcessCWD": true },
+    { "directory": "./saas-boilerplate/api", "changeProcessCWD": true },
+    { "directory": "./saas-boilerplate/lambda", "changeProcessCWD": true },
+  ]
+}

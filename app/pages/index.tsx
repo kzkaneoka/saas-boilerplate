@@ -17,7 +17,7 @@ const Index = () => (
         <a>Go to CSR page</a>
       </Link>
       <p />
- <i className="material-icons">menu</i>
+      <i className="material-icons">menu</i>
     </div>
   </Layout>
 );

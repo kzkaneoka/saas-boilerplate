@@ -2,8 +2,8 @@ import Avatar from '@material-ui/core/Avatar';
 import Grid from '@material-ui/core/Grid';
 import React from 'react';
 import MenuWithLinks from '../common/MenuWithLinks';
-import Notifier from '../common/Notifier';
 import Confirmer from '../common/Confirmer';
+import Notifier from '../common/Notifier';
 
 const styleGrid = {
   width: '100vw',
@@ -20,18 +20,27 @@ const styleGridIsMobile = {
 };
 
 type Props = {
-  firstGridItem?: boolean;
   children: React.ReactNode;
+  firstGridItem?: boolean;
+  isMobile?: boolean;
 };
 
 class Layout extends React.Component<Props> {
   public render() {
-    const { firstGridItem, children } = this.props;
+    const { children, firstGridItem, isMobile } = this.props;
 
     const isThemeDark = false;
 
+    console.log(isMobile);
+
     return (
-      <Grid container direction="row" justify="flex-start" alignItems="stretch" style={styleGrid}>
+      <Grid
+        container
+        direction="row"
+        justify="flex-start"
+        alignItems="stretch"
+        style={isMobile ? styleGridIsMobile : styleGrid}
+      >
         {firstGridItem ? (
           <Grid
             item
@@ -115,6 +124,7 @@ class Layout extends React.Component<Props> {
           </Grid>
         ) : null}
         <Grid item sm={10} xs={12}>
+          {isMobile ? <hr /> : null}
           {children}
         </Grid>
         <Notifier />

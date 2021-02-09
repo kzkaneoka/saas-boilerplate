@@ -28,17 +28,18 @@ const Index = () => (
             title: 'Are you sure?',
             message: 'explanatory message',
             onAnswer: async (answer) => {
-              console.log(answer);
-
               if (!answer) {
                 return;
               }
 
+              NProgress.start();
               try {
                 notify('You successfully confirmed.');
               } catch (error) {
                 console.error(error);
                 notify(error);
+              } finally {
+                NProgress.done();
               }
             },
           })
